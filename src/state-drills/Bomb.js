@@ -1,12 +1,18 @@
 import React from 'react'
 
 class Bomb extends React.Component{
+
     constructor(props){
         super(props)
         this.state ={
             counter: 0
         }
     }
+
+    static defaultProps = {
+      counter: 0
+    }
+
     componentDidMount(){
       this.interval =  setInterval(() => {
             let newCounter = this.state.counter + 1
@@ -15,9 +21,9 @@ class Bomb extends React.Component{
             })
         }, 1000)
     }
+
     componentWillUnmount(){
         clearInterval(this.interval)
-
     }
 
     render(){

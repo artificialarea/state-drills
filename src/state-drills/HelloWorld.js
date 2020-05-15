@@ -8,6 +8,10 @@ class HelloWorld extends React.Component {
       who: 'who?',
     }
   }
+
+  static defaultProps = {
+    who: ''
+  }
   
   handleButtonClick = (event) => {
     this.setState(
